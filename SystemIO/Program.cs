@@ -22,7 +22,22 @@ namespace SystemIO
 
 
 
+
+        int product = 1;
+        int[] intArray = new int[3];
+
+
+        for(int i = 0; i < 0; i++)
+            {
+            }
+
     }
+
+
+
+
+
 }
+
 
 
