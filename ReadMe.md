@@ -73,8 +73,10 @@ Summary
         /// </summary>
 
 
-![Challenge1](Assets/images/Lab03_Challenge01.PNG) 
-![Challenge1](Assets/images/Lab03_Challenge02.PNG)
+![Challenge1](Assets/images/Lab03_Challenge01_Image01.PNG) 
+
+
+![Challenge1](Assets/images/Lab03_Challenge02_Image02.PNG)
 
 
 
@@ -149,7 +151,7 @@ No tests are required
         /// </summary>
 
 
-![Challenge1](Assets/images/Diamond)
+![Challenge1](Assets/images/Diamond.png)
 
 
 
