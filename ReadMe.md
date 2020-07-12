@@ -150,8 +150,6 @@ No tests are required
 
 
 
-
-
 Challenge 4
 Write a method that brings in an integer array and returns the number that appears the most times. If there are no duplicates, return the first number in the array. If more than one number show up the same amount of time, return the first found.
 
@@ -163,6 +161,18 @@ Input different size arrays
 All numbers in the array are the same value
 No duplicates exist in the array
 There multiple numbers that show up the same amount of times.
+
+
+  /// <summary>
+        /// Calculate the average of the inputted integers.
+        /// Return the frequency of integers.
+        /// Check if the numbers duplicate or not
+        /// Return first number if no duplicates
+        /// </summary>
+        /// <param name="numberArray"></param>
+        /// <returns></returns>
+
+
 
 
 
