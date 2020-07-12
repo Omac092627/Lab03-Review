@@ -13,7 +13,7 @@ namespace SystemIO
             //StartItUp();
             // ChallengeTwo();
             //ChallengeThreeDiamond();
-            ChallengeFour();
+            ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
         }
 
 
@@ -126,7 +126,7 @@ namespace SystemIO
         public static decimal ChallengeTwoAverage(int[] sum)
         {
             decimal total = 0;
-            for(int i = 0; i < sum.Length; i++)
+            for (int i = 0; i < sum.Length; i++)
             {
                 total += sum[i];
             }
@@ -173,52 +173,47 @@ namespace SystemIO
             }
         }
 
-        public static void ChallengeFour()
+
+        /// <summary>
+        /// Calculate the average of the inputted integers.
+        /// Return the frequency of integers.
+        /// Check if the numbers duplicate or not
+        /// Return first number if no duplicates
+        /// </summary>
+        /// <param name="numberArray"></param>
+        /// <returns></returns>
+        public static int ChallengeFour(int[] numberArray)
         {
-            int[] arr1 = new int[10];
-            int[] fr1 = new int[10];
-            int n, i, j, ctr;
+            //counters to know the frequency//
+            int counter = 0;
+            int freq = 0;
 
+            //arrays for entered and frequency//
+            int numbers = numberArray[0];
+            int frontNumbers = numberArray[0];
 
-
-            Console.Write("Input the number of elements to be stored in the array :");
-            n = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Input {0} elements in the array :\n", n);
-            for (i = 0; i < n; i++)
+            for (int i = 0; i < numberArray.Length; i++)
             {
-                Console.Write("element - {0} : ", i);
-                arr1[i] = Convert.ToInt32(Console.ReadLine());
-                fr1[i] = -1;
-            }
-            for (i = 0; i < n; i++)
-            {
-                ctr = 1;
-                for (j = i + 1; j < n; j++)
+                counter = 0;
+                for (int a = 0; a < numberArray.Length; a++)
                 {
-                    if (arr1[i] == arr1[j])
+                    if (numberArray[i] == numberArray[a])
                     {
-                        ctr++;
-                        fr1[j] = 0;
+                        counter += 1;
+                        frontNumbers = numberArray[i];
                     }
                 }
-
-                if (fr1[i] != 0)
+                if (freq < counter)
                 {
-                    fr1[i] = ctr;
-                }
-             
-            }
-            Console.Write("\nThe frequency of all elements of the array : \n");
-            for (i = 0; i < n; i++)
-            {
-                if (fr1[i] != 0)
-                {
-                    Console.Write("{0} occurs {1} times\n", arr1[i], fr1[i]);
+                    numbers = frontNumbers;
+                    freq = counter;
                 }
             }
+            return freq;
 
         }
+
+
 
 
     }
