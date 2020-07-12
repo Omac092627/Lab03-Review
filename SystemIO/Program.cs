@@ -11,7 +11,7 @@ namespace SystemIO
         static void Main(string[] args)
         {
             StartItUp();
-
+            ChallengeTwo();
         }
 
 
@@ -73,10 +73,60 @@ namespace SystemIO
             Console.WriteLine($"The product of these 3 numbers is: {product}");
             return product;
         }
+        public static void ChallengeTwo()
+        {
+
+            Console.WriteLine("Please enter a number between 2 and 10: ");
+            string entered = Console.ReadLine();
+            if (!int.TryParse(entered, out int result))
+            {
+                throw new Exception("You did not enter a number. Please enter a number:");
+            }
+            else if (result < 2 || result > 10)
+            {
+                throw new Exception("You must enter a number between 2 and 10");
+
+            }
+            else
+            {
+                int[] newArray = new int[result];
+
+                for (int i = 0; i < result; i++)
+                {
+                    Console.WriteLine($"Please enter a number {i + 1}/{result}");
+                    string enteredNumber = Console.ReadLine();
+
+                    if (int.TryParse(enteredNumber, out int results))
+                    {
+                        newArray[i] = results;
+                    }
+                    else
+                    {
+                        throw new Exception("Please enter a valid number");
+                    }
+                }
+                decimal average = ChallengeTwoAverage(newArray);
+                Console.WriteLine($"Your average is {average}");
+
+            }
+
+        }
+
+        public static decimal ChallengeTwoAverage(int[] sum)
+        {
+            decimal total = 0;
+            for(int i = 0; i < sum.Length; i++)
+            {
+                total += sum[i];
+            }
+            return total /= sum.Length;
+
+        }
+
+
+
+
     }
-
-
-
 
 }
 
