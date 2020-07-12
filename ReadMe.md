@@ -20,7 +20,7 @@ Whiteboard at least one of the challenges and include it in your readme. If you 
 
 
 
-Challenge 1
+# Challenge 1
 Write a program that asks the user for 3 numbers. Return the product of these 3 numbers multiplied together. If the user puts in less than 3 numbers, return 0; If the user puts in more than 3 numbers, only multiply the first 3. If the number is not a number, default that value to 1.
 
 Example
@@ -170,7 +170,7 @@ Return first number if no duplicates
 ---
 
 
-Challenge 5
+# Challenge 5
 Write a method in that finds the maximum value in the array. The array is not sorted. You may not use .Sort()
 
 Example: input [5, 25, 99, 123, 78, 96, 555, 108, 4]
@@ -195,11 +195,19 @@ I loop through the users input to find the max value.
 
 
 Challenge 6
+
 Write a method that asks the user to input a word, and then saves that word into an external file named words.txt
 
 Hint: Have a file already saved in the root of your directory with a couple of words already present in the file.
 
 Stretch: 1. Tests are optional for this challenge
+
+
+
+# Summary of Challenge 6
+
+ Appending a file with words. Calling the path method in the static method at the top.
+
 
 
 ---

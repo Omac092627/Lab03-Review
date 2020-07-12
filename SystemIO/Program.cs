@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace SystemIO
 {
@@ -10,11 +11,14 @@ namespace SystemIO
         /// </summary>
         static void Main(string[] args)
         {
+            string path = "../../words.txt";
+
             //StartItUp();
             // ChallengeTwo();
             //ChallengeThreeDiamond();
             //ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
-            ChallengeFive();
+            // ChallengeFive();
+            FindAndSaveWriting(path);
         }
 
 
@@ -256,6 +260,21 @@ namespace SystemIO
             Console.Write("Maximum element is : {0}\n", mx);
             return 0;
         }
+
+
+        /// <summary>
+        /// Appending a file with words. Calling the path method in the static method at the top.
+        /// </summary>
+        /// <param name="path"></param>
+
+        static void FindAndSaveWriting(string path)
+        {
+            Console.WriteLine("Enter something or die:");
+            string word = Console.ReadLine();
+            File.AppendAllText(path, word);
+        }
+
+
 
 
 
