@@ -17,6 +17,8 @@ Be sure to use exception handling where appropriate, and write tests as outlined
 Whiteboard at least one of the challenges and include it in your readme. If you are working in groups, every person in the group must have their own whiteboard for a different problem.
 
 
+
+
 Challenge 1
 Write a program that asks the user for 3 numbers. Return the product of these 3 numbers multiplied together. If the user puts in less than 3 numbers, return 0; If the user puts in more than 3 numbers, only multiply the first 3. If the number is not a number, default that value to 1.
 
@@ -71,6 +73,11 @@ Summary
         /// </summary>
 
 
+![Challenge1](Assets/images/Lab03_Challenge01.PNG) 
+![Challenge1](Assets/images/Lab03_Challenge02.PNG)
+
+
+
 
 Challenge 2
 Create a method that asks the user to enter a number between 2-10. Then, prompt the user that number of times for random numbers.
@@ -97,6 +104,20 @@ All numbers are 0s
 
 
 
+        /// <summary>
+        /// I prompt the user and ask them to enter a number between 2 and 10. 
+        /// I read that information and run a try parse in order to test my conversion.
+        /// If everything runs smoothly, it prompts the user that number of times.
+        /// After the user has entered the numbers, it takes the sum and provides the average.
+        /// </summary>
+
+
+![CalculateAverage](Assets/images/CalculateAverage.png)
+
+
+
+
+
 
 Challenge 3
 Create a method that will output to the console the following design. Pay attention to spacing.
@@ -115,6 +136,27 @@ Create a method that will output to the console the following design. Pay attent
 Tests:
 
 No tests are required
+
+
+
+        /// <summary>
+        /// This challenge was tricky. I start by propmpting the user to enter the number of rows which act as half
+        /// of the diamond.
+        /// I then convert the users input followed by activating a forloop. The loop runs through the users 
+        /// entered input, which is 8. The first for loop is calculating the spaces while the second one is incrementing
+        /// "*" symbol and building up to 8 rows. 
+        /// The following for loop below it does the same thing.
+        /// </summary>
+
+
+![Challenge1](Assets/images/Diamond)
+
+
+
+
+
+
+
 
 
 
