@@ -7,7 +7,7 @@ Lami Beach
 
 Program Specifications:
 
-
+---
 
 Problem Domain
 Create a single Console Application Project within Visual Studio. Write all of your code in the Program.cs file. with a method for each of the challenge below. Call each of these methods in your main method.
@@ -16,6 +16,7 @@ Be sure to use exception handling where appropriate, and write tests as outlined
 
 Whiteboard at least one of the challenges and include it in your readme. If you are working in groups, every person in the group must have their own whiteboard for a different problem.
 
+---
 
 
 
@@ -79,6 +80,7 @@ Summary
 ![Challenge1](Assets/images/Lab03_Challenge01_Image02.PNG)
 
 
+---
 
 
 Challenge 2
@@ -118,6 +120,7 @@ All numbers are 0s
 
 
 
+---
 
 
 
@@ -144,6 +147,7 @@ No tests are required
 ![Challenge1](Assets/images/Diamond.png)
 
 
+---
 
 
 
@@ -164,16 +168,14 @@ There multiple numbers that show up the same amount of times.
 
 
   /// <summary>
-        /// Calculate the average of the inputted integers.
-        /// Return the frequency of integers.
-        /// Check if the numbers duplicate or not
-        /// Return first number if no duplicates
-        /// </summary>
-        /// <param name="numberArray"></param>
-        /// <returns></returns>
+Calculate the average of the inputted integers.
+ Return the frequency of integers.
+ Check if the numbers duplicate or not
+ Return first number if no duplicates
 
 
 
+---
 
 
 Challenge 5
@@ -185,6 +187,7 @@ return: 555
 Tests: 1. Negative numbers 2. All values are the same
 
 
+---
 
 
 Challenge 6
@@ -195,6 +198,7 @@ Hint: Have a file already saved in the root of your directory with a couple of w
 Stretch: 1. Tests are optional for this challenge
 
 
+---
 
 
 Challenge 7
@@ -203,6 +207,7 @@ Write a method that reads the file in from Challenge 6, and outputs the contents
 Stretch: 1. Tests are optional for this challenge
 
 
+---
 
 
 Challenge 8
@@ -211,6 +216,7 @@ Write a method that reads in the file from Challenge 6. Removes one of the words
 Stretch: 1. Tests are optional for this challenge
 
 
+---
 
 
 Challenge 9
@@ -220,7 +226,14 @@ Example: input: "This is a sentance about important things"
 Output: ["this: 4","is: 2", "a: 1", "sentance: 8", "about: 5", "important: 9", "things: 6"]
 Tests: 1. Input a sentance, and it returns the correct array 2. Inut a sentance and confirm it returns an array 3. Use different sentances with differnt symbols
 
-© Code Fellows 2020
+
+
+
+
+---
+
+
+© Lami Beach 2020
 
 
 
