@@ -76,7 +76,7 @@ Summary
 ![Challenge1](Assets/images/Lab03_Challenge01_Image01.PNG) 
 
 
-![Challenge1](Assets/images/Lab03_Challenge02_Image02.PNG)
+![Challenge1](Assets/images/Lab03_Challenge01_Image02.PNG)
 
 
 
@@ -124,16 +124,6 @@ All numbers are 0s
 Challenge 3
 Create a method that will output to the console the following design. Pay attention to spacing.
 
-
-    * 
-   *** 
-  *****
- *******
-*********
- *******
-  *****
-   ***
-    * 
 
 Tests:
 
