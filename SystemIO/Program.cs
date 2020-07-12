@@ -11,7 +11,7 @@ namespace SystemIO
         static void Main(string[] args)
         {
             StartItUp();
-
+            ChallengeTwo();
         }
 
 
@@ -74,6 +74,31 @@ namespace SystemIO
             return product;
         }
     }
+    public static int ChallengeTwo()
+        {
+
+        Console.WriteLine("Please enter a number between 2 and 10: ");
+        int entered = Convert.ToInt32(Console.Read());
+        int counter = 1;
+
+        for(int i = 0; i < entered.Length; i++)
+            {
+                Console.WriteLine($"Enter a number {counter} of {entered}:");
+                int nextEntered = Convert.ToInt32(Console.ReadLine());
+                counter++;
+        
+        }
+
+
+
+    }
+
+
+
+
+
+
+
 
 
 
