@@ -10,8 +10,10 @@ namespace SystemIO
         /// </summary>
         static void Main(string[] args)
         {
-            StartItUp();
+            //StartItUp();
             ChallengeTwo();
+
+            //ChallengeThreeDiamond();
         }
 
 
@@ -73,6 +75,15 @@ namespace SystemIO
             Console.WriteLine($"The product of these 3 numbers is: {product}");
             return product;
         }
+
+
+
+        /// <summary>
+        /// I prompt the user and ask them to enter a number between 2 and 10. 
+        /// I read that information and run a try parse in order to test my conversion.
+        /// If everything runs smoothly, it prompts the user that number of times.
+        /// After the user has entered the numbers, it takes the sum and provides the average.
+        /// </summary>
         public static void ChallengeTwo()
         {
 
@@ -123,6 +134,44 @@ namespace SystemIO
 
         }
 
+
+        /// <summary>
+        /// This challenge was tricky. I start by propmpting the user to enter the number of rows which act as half
+        /// of the diamond.
+        /// I then convert the users input followed by activating a forloop. The loop runs through the users 
+        /// entered input, which is 8. The first for loop is calculating the spaces while the second one is incrementing
+        /// "*" symbol and building up to 8 rows. 
+        /// The following for loop below it does the same thing.
+        /// </summary>
+        public static void ChallengeThreeDiamond()
+        {
+            int i, j, r;
+
+            Console.Write("\n\n");
+            Console.Write("Display the pattern like diamond:\n");
+            Console.Write("-----------------------------------");
+            Console.Write("\n\n");
+
+            Console.Write("Input number of rows (half of the diamond) :");
+            r = Convert.ToInt32(Console.ReadLine());
+            for (i = 0; i <= r; i++)
+            {
+                for (j = 1; j <= r - i; j++)
+                    Console.Write(" ");
+                for (j = 1; j <= 2 * i - 1; j++)
+                    Console.Write("*");
+                Console.Write("\n");
+            }
+
+            for (i = r - 1; i >= 1; i--)
+            {
+                for (j = 1; j <= r - i; j++)
+                    Console.Write(" ");
+                for (j = 1; j <= 2 * i - 1; j++)
+                    Console.Write("*");
+                Console.Write("\n");
+            }
+        }
 
 
 
