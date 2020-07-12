@@ -7,7 +7,7 @@ Lami Beach
 
 Program Specifications:
 
-
+---
 
 Problem Domain
 Create a single Console Application Project within Visual Studio. Write all of your code in the Program.cs file. with a method for each of the challenge below. Call each of these methods in your main method.
@@ -16,6 +16,7 @@ Be sure to use exception handling where appropriate, and write tests as outlined
 
 Whiteboard at least one of the challenges and include it in your readme. If you are working in groups, every person in the group must have their own whiteboard for a different problem.
 
+---
 
 
 
@@ -36,41 +37,36 @@ Input of less than 3 numbers
 Can it handle negative numbers
 
 
-Summary
+# Summary of Challenge 1
 
        
        Pt 1:
-        /// <summary>
-        /// A main method that calls my weak methods
-        /// We start by Calling it, with parenthesis
-        /// </summary>
+        A main method that calls my weak methods
+        We start by Calling it, with parenthesis
 
 
         Pt 2:
-        /// <summary>
-        /// The StartItUp() method begins by asking the user to enter 3 numbers
-        /// Followed by stringifying the users input and converting to string
-        /// Then I call my canReturnInputNumber() method with the parameter of pickSomething, the submitted
-        /// code that's been converted to string.
-        /// </summary>
+        The StartItUp() method begins by asking the user to enter 3 numbers
+        Followed by stringifying the users input and converting to string
+        Then I call my canReturnInputNumber() method with the parameter of pickSomething, the submitted
+        code that's been converted to string.
+        </summary>
 
 
         Pt 3:
-        /// <summary>
-        /// I call the canReturnInputNumber in order to perform the logic needed to perform what I'm asking.
-        /// 1.I start by stringifying the input and combinging with a Split(). 
-        ///     - This allows the input to be split with delimetters.
-        /// 2. The assignment then calls for to first allow an array of 3 numbers to be inputted
-        ///     - The if statement tests whether the length is less than 3
-        /// 3. Then I need to declare a new int array and an int in order to store and multiply
-        ///     - I follow up with a for loop, hard coded, that loops through 3 numbers.
-        ///     - I then follow with an if statement that also converts a string to an integer and returns a value
-        ///         - It's called TryParse() and it's sick
-        ///     - Finally, I multiply the product x 1 in order to return the value.
-        ///         - The one is so I get the value of the array back
-        ///     - Lastly, I call the writeLine method in order to display what the user entered back to them
-        ///         - followed by returning the product.
-        /// </summary>
+        I call the canReturnInputNumber in order to perform the logic needed to perform what I'm asking.
+        1.I start by stringifying the input and combinging with a Split(). 
+            - This allows the input to be split with delimetters.
+        2. The assignment then calls for to first allow an array of 3 numbers to be inputted
+             - The if statement tests whether the length is less than 3
+        3. Then I need to declare a new int array and an int in order to store and multiply
+             - I follow up with a for loop, hard coded, that loops through 3 numbers.
+             - I then follow with an if statement that also converts a string to an integer and returns a value
+             - It's called TryParse() and it's sick
+             - Finally, I multiply the product x 1 in order to return the value.
+             - The one is so I get the value of the array back
+             - Lastly, I call the writeLine method in order to display what the user entered back to them
+             - followed by returning the product.
 
 
 ![Challenge1](Assets/images/Lab03_Challenge01_Image01.PNG) 
@@ -79,9 +75,10 @@ Summary
 ![Challenge1](Assets/images/Lab03_Challenge01_Image02.PNG)
 
 
+---
 
 
-Challenge 2
+# Challenge 2
 Create a method that asks the user to enter a number between 2-10. Then, prompt the user that number of times for random numbers.
 
 After the user has inputted all of the numbers. Find the average of all the numbers inputted.
@@ -118,10 +115,11 @@ All numbers are 0s
 
 
 
+---
 
 
 
-Challenge 3
+# Challenge 3
 Create a method that will output to the console the following design. Pay attention to spacing.
 
 
@@ -130,27 +128,25 @@ Tests:
 No tests are required
 
 
-
-        /// <summary>
-        /// This challenge was tricky. I start by propmpting the user to enter the number of rows which act as half
-        /// of the diamond.
-        /// I then convert the users input followed by activating a forloop. The loop runs through the users 
-        /// entered input, which is 8. The first for loop is calculating the spaces while the second one is incrementing
-        /// "*" symbol and building up to 8 rows. 
-        /// The following for loop below it does the same thing.
-        /// </summary>
+# Summary of Challenge 3
+This challenge was tricky. I start by propmpting the user to enter the number of rows which act as half of the diamond.
+I then convert the users input followed by activating a forloop. The loop runs through the users entered input, which is 8. 
+The first for loop is calculating the spaces while the second one is incrementing
+"*" symbol and building up to 8 rows. 
+The following for loop below it does the same thing.
 
 
-![Challenge1](Assets/images/Diamond.png)
+![Challenge3](Assets/images/Diamond.png)
 
 
+---
 
 
 
 
 
 
-Challenge 4
+# Challenge 4
 Write a method that brings in an integer array and returns the number that appears the most times. If there are no duplicates, return the first number in the array. If more than one number show up the same amount of time, return the first found.
 
  Example: Input: [1,1,2,2,3,3,3,1,1,5,5,6,7,8,2,1,1]
@@ -163,17 +159,15 @@ No duplicates exist in the array
 There multiple numbers that show up the same amount of times.
 
 
-  /// <summary>
-        /// Calculate the average of the inputted integers.
-        /// Return the frequency of integers.
-        /// Check if the numbers duplicate or not
-        /// Return first number if no duplicates
-        /// </summary>
-        /// <param name="numberArray"></param>
-        /// <returns></returns>
+# Summary of Challenge 4
+Calculate the average of the inputted integers.
+Return the frequency of integers.
+Check if the numbers duplicate or not
+Return first number if no duplicates
 
 
 
+---
 
 
 Challenge 5
@@ -186,6 +180,19 @@ Tests: 1. Negative numbers 2. All values are the same
 
 
 
+# Summary of Challenge 5
+I declare an int to hold my array and put some variable in to mitigate workload.
+I prompt the user to enter the amount of numbers they want in array.
+After I propmt the user the number of times they entered.
+I loop through the users input to find the max value.
+
+
+
+![Challenge5](Assets/images/MaximumValue.png)
+
+
+---
+
 
 Challenge 6
 Write a method that asks the user to input a word, and then saves that word into an external file named words.txt
@@ -195,6 +202,7 @@ Hint: Have a file already saved in the root of your directory with a couple of w
 Stretch: 1. Tests are optional for this challenge
 
 
+---
 
 
 Challenge 7
@@ -203,6 +211,7 @@ Write a method that reads the file in from Challenge 6, and outputs the contents
 Stretch: 1. Tests are optional for this challenge
 
 
+---
 
 
 Challenge 8
@@ -211,6 +220,7 @@ Write a method that reads in the file from Challenge 6. Removes one of the words
 Stretch: 1. Tests are optional for this challenge
 
 
+---
 
 
 Challenge 9
@@ -220,7 +230,14 @@ Example: input: "This is a sentance about important things"
 Output: ["this: 4","is: 2", "a: 1", "sentance: 8", "about: 5", "important: 9", "things: 6"]
 Tests: 1. Input a sentance, and it returns the correct array 2. Inut a sentance and confirm it returns an array 3. Use different sentances with differnt symbols
 
-© Code Fellows 2020
+
+
+
+
+---
+
+
+© Lami Beach 2020
 
 
 

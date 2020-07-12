@@ -13,7 +13,8 @@ namespace SystemIO
             //StartItUp();
             // ChallengeTwo();
             //ChallengeThreeDiamond();
-            ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
+            //ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
+            ChallengeFive();
         }
 
 
@@ -211,6 +212,49 @@ namespace SystemIO
             }
             return freq;
 
+        }
+
+
+
+        /// <summary>
+        /// I declare an int to hold my array and put some variable in to mitigate workload.
+        /// I prompt the user to enter the amount of numbers they want in array.
+        /// After I propmt the user the number of times they entered.
+        /// I loop through the users input to find the max value.
+        /// </summary>
+        /// <returns></returns>
+
+        public static int ChallengeFive()
+        {
+            int[] arr1 = new int[100];
+            int i, mx, n;
+
+
+            Console.Write("\n\nFind maximum and minimum element in an array :\n");
+            Console.Write("--------------------------------------------------\n");
+
+            Console.Write("Input the number of elements to be stored in the array :");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Input {0} elements in the array :\n", n);
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("element - {0} : ", i);
+                arr1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+
+            mx = arr1[0];
+
+            for (i = 1; i < n; i++)
+            {
+                if (arr1[i] > mx)
+                {
+                    mx = arr1[i];
+                }
+            }
+            Console.Write("Maximum element is : {0}\n", mx);
+            return 0;
         }
 
 
