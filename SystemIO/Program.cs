@@ -17,7 +17,7 @@ namespace SystemIO
             ChallengeTwo(new int[] { });
             ChallengeThreeDiamond();
             ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
-            ChallengeFive();
+            ChallengeFive(new int[] { });
             FindAndSaveWriting(path);
             ReadAllWritingAndPrintToConsole(path);
 
@@ -232,7 +232,7 @@ namespace SystemIO
         /// </summary>
         /// <returns></returns>
 
-        public static int ChallengeFive()
+        public static int ChallengeFive(int[] array)
         {
             int[] arr1 = new int[100];
             int i, mx, n;
