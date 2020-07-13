@@ -267,7 +267,7 @@ String an array in order to split up the char's
 String a counter in order to count the number of char's in word
 For loop to loop through the array
 Call the count method while looping through entered array and set equal to concatanation
-Return value to user        /// Promopt the user to enter a sentence
+Return value to user       
 String the words the user enters
 String an array in order to split up the char's
 String a counter in order to count the number of char's in word
