@@ -167,6 +167,17 @@ Return first number if no duplicates
 
 
 
+![White Board](Assets/images/whiteboard.jpeg)
+
+
+
+
+
+![White Board](Assets/images/whiteboard2.JPEG)
+
+
+
+
 ---
 
 
