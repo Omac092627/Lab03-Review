@@ -11,15 +11,15 @@ namespace SystemIO
         /// </summary>
         static void Main(string[] args)
         {
-            //string path = "../../words.txt";
+            string path = "../../words.txt";
 
-            //StartItUp();
-            // ChallengeTwo();
-            //ChallengeThreeDiamond();
-            //ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
-            // ChallengeFive();
-            //FindAndSaveWriting(path);
-            //ReadAllWritingAndPrintToConsole(path);
+            StartItUp();
+            ChallengeTwo(new int[] { });
+            ChallengeThreeDiamond();
+            ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
+            ChallengeFive(new int[] { });
+            FindAndSaveWriting(path);
+            ReadAllWritingAndPrintToConsole(path);
 
             GetLengthOfEachWord();
         }
@@ -92,7 +92,7 @@ namespace SystemIO
         /// If everything runs smoothly, it prompts the user that number of times.
         /// After the user has entered the numbers, it takes the sum and provides the average.
         /// </summary>
-        public static void ChallengeTwo()
+        public static decimal ChallengeTwo(int[] array)
         {
 
             Console.WriteLine("Please enter a number between 2 and 10: ");
@@ -129,6 +129,7 @@ namespace SystemIO
 
             }
 
+            return 0;
         }
 
         public static decimal ChallengeTwoAverage(int[] sum)
@@ -231,7 +232,7 @@ namespace SystemIO
         /// </summary>
         /// <returns></returns>
 
-        public static int ChallengeFive()
+        public static int ChallengeFive(int[] array)
         {
             int[] arr1 = new int[100];
             int i, mx, n;
