@@ -260,7 +260,20 @@ Output: ["this: 4","is: 2", "a: 1", "sentance: 8", "about: 5", "important: 9", "
 Tests: 1. Input a sentance, and it returns the correct array 2. Inut a sentance and confirm it returns an array 3. Use different sentances with differnt symbols
 
 
-
+# Summary of Challenge 9
+Promopt the user to enter a sentence
+String the words the user enters
+String an array in order to split up the char's
+String a counter in order to count the number of char's in word
+For loop to loop through the array
+Call the count method while looping through entered array and set equal to concatanation
+Return value to user        /// Promopt the user to enter a sentence
+String the words the user enters
+String an array in order to split up the char's
+String a counter in order to count the number of char's in word
+For loop to loop through the array
+Call the count method while looping through entered array and set equal to concatanation
+Return value to user
 
 
 ---
