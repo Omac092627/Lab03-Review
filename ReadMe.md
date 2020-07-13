@@ -218,6 +218,12 @@ Write a method that reads the file in from Challenge 6, and outputs the contents
 
 Stretch: 1. Tests are optional for this challenge
 
+ Reading and writing the file back to the console
+
+
+
+![Challenge6and7](Assets/images/FileWriting.png)
+
 
 ---
 
@@ -226,6 +232,21 @@ Challenge 8
 Write a method that reads in the file from Challenge 6. Removes one of the words, and rewrites it back to the file.
 
 Stretch: 1. Tests are optional for this challenge
+
+# Summary of Challenge 8
+
+ First i instantiate the reading of the file
+ Then split the words to separate what I want to remove
+ Followed by a for loop to loop through my words
+ If my words are there from previous, delte them
+Followed by joining my new words
+
+
+![Challenge8](Assets/images/BeforeDelete.png)
+
+
+
+![Challenge8](Assets/images/AfterDelete.png)
 
 
 ---

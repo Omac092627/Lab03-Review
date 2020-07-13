@@ -19,9 +19,10 @@ namespace SystemIO
             //ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
             // ChallengeFive();
             FindAndSaveWriting(path);
+            ReadAllWritingAndPrintToConsole(path);
         }
 
-
+        
         /// <summary>
         /// The StartItUp() method begins by asking the user to enter 3 numbers
         /// Followed by stringifying the users input and converting to string
@@ -272,10 +273,51 @@ namespace SystemIO
             Console.WriteLine("Enter something or die:");
             string word = Console.ReadLine();
             File.AppendAllText(path, word);
+            ReadTheFileandRemoveOneWord(path, word);
+
         }
 
+        /// <summary>
+        /// Reading and writing the file back to the console
+        /// </summary>
+        /// <param name="path"></param>
 
+        static void ReadAllWritingAndPrintToConsole(string path)
+        {
+            
+                string[] allLines = File.ReadAllLines(path);
+                Console.WriteLine(String.Join('\n', allLines));
 
+        }
+
+        /// <summary>
+        /// First i instantiate the reading of the file
+        /// Then split the words to separate what I want to remove
+        /// Followed by a for loop to loop through my words
+        /// If my words are there from previous, delte them
+        /// Followed by joining my new words
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="removeThisWord"></param>
+
+        static void ReadTheFileandRemoveOneWord(string path, string removeThisWord)
+        {
+            string stringInFile = File.ReadAllText(path);
+
+            string[] words = stringInFile.Split(" ");
+
+            for(int i = 0; i < words.Length; i++)
+            {
+                if(words[i] == removeThisWord)
+                {
+                    words[i] = "";
+                }
+
+                string newString = String.Join(" ", words);
+
+                File.WriteAllText(path, newString);
+            }
+        }
 
 
 
