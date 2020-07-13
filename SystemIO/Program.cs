@@ -11,18 +11,20 @@ namespace SystemIO
         /// </summary>
         static void Main(string[] args)
         {
-            string path = "../../words.txt";
+            //string path = "../../words.txt";
 
             //StartItUp();
             // ChallengeTwo();
             //ChallengeThreeDiamond();
             //ChallengeFour(new int[] { 1, 2, 1, 3, 4, 5, 6, 4 });
             // ChallengeFive();
-            FindAndSaveWriting(path);
-            ReadAllWritingAndPrintToConsole(path);
+            //FindAndSaveWriting(path);
+            //ReadAllWritingAndPrintToConsole(path);
+
+            GetLengthOfEachWord();
         }
 
-        
+
         /// <summary>
         /// The StartItUp() method begins by asking the user to enter 3 numbers
         /// Followed by stringifying the users input and converting to string
@@ -284,9 +286,9 @@ namespace SystemIO
 
         static void ReadAllWritingAndPrintToConsole(string path)
         {
-            
-                string[] allLines = File.ReadAllLines(path);
-                Console.WriteLine(String.Join('\n', allLines));
+
+            string[] allLines = File.ReadAllLines(path);
+            Console.WriteLine(String.Join('\n', allLines));
 
         }
 
@@ -306,9 +308,9 @@ namespace SystemIO
 
             string[] words = stringInFile.Split(" ");
 
-            for(int i = 0; i < words.Length; i++)
+            for (int i = 0; i < words.Length; i++)
             {
-                if(words[i] == removeThisWord)
+                if (words[i] == removeThisWord)
                 {
                     words[i] = "";
                 }
@@ -319,6 +321,31 @@ namespace SystemIO
             }
         }
 
+
+        /// <summary>
+        /// Promopt the user to enter a sentence
+        /// String the words the user enters
+        /// String an array in order to split up the char's
+        /// String a counter in order to count the number of char's in word
+        /// For loop to loop through the array
+        /// Call the count method while looping through entered array and set equal to concatanation
+        /// Return value to user
+        /// </summary>
+        static void GetLengthOfEachWord()
+        {
+            Console.WriteLine("PLEASE ENTER A SENTENCE:");
+            string words = Console.ReadLine();
+            string[] wordsArray = words.Split(" ");
+            string[] count = new string[wordsArray.Length * 2];
+
+
+            for (int i = 0; i < wordsArray.Length; i++)
+            {
+                count[i] = ( $"{String.Join(',', wordsArray[i])}: {String.Join(',', wordsArray[i].Length)}");
+            }
+            Console.WriteLine(count);
+
+        }
 
 
     }
