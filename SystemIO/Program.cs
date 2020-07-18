@@ -59,155 +59,158 @@ namespace SystemIO
             return product;
         }
 
-    /// <summary>
-    /// I call the canReturnInputNumber in order to perform the logic needed to perform what I'm asking.
-    /// 1.I start by stringifying the input and combinging with a Split(). 
-    ///     - This allows the input to be split with delimetters.
-    /// 2. The assignment then calls for to first allow an array of 3 numbers to be inputted
-    ///     - The if statement tests whether the length is less than 3
-    /// 3. Then I need to declare a new int array and an int in order to store and multiply
-    ///     - I follow up with a for loop, hard coded, that loops through 3 numbers.
-    ///     - I then follow with an if statement that also converts a string to an integer and returns a value
-    ///         - It's called TryParse() and it's sick
-    ///     - Finally, I multiply the product x 1 in order to return the value.
-    ///         - The one is so I get the value of the array back
-    ///     - Lastly, I call the writeLine method in order to display what the user entered back to them
-    ///         - followed by returning the product.
-    /// </summary>
-    static void ChallengeTwo()
-    {
-        bool isFormatted = false;
-        do
+        /// <summary>
+        /// I call the canReturnInputNumber in order to perform the logic needed to perform what I'm asking.
+        /// 1.I start by stringifying the input and combinging with a Split(). 
+        ///     - This allows the input to be split with delimetters.
+        /// 2. The assignment then calls for to first allow an array of 3 numbers to be inputted
+        ///     - The if statement tests whether the length is less than 3
+        /// 3. Then I need to declare a new int array and an int in order to store and multiply
+        ///     - I follow up with a for loop, hard coded, that loops through 3 numbers.
+        ///     - I then follow with an if statement that also converts a string to an integer and returns a value
+        ///         - It's called TryParse() and it's sick
+        ///     - Finally, I multiply the product x 1 in order to return the value.
+        ///         - The one is so I get the value of the array back
+        ///     - Lastly, I call the writeLine method in order to display what the user entered back to them
+        ///         - followed by returning the product.
+        /// </summary>
+        static void ChallengeTwo()
         {
-            Console.WriteLine("Please enter a number between 2 and 10: ");
-            string input = Console.ReadLine();
-            bool yes = int.TryParse(input, out int arraySize);
-
-            if (yes && arraySize > 1 && arraySize < 11)
+            bool isFormatted = false;
+            do
             {
-                isFormatted = callBack(arraySize);
-            }
-            else
-            {
-                Console.WriteLine("Improper input, try again.");
-                isFormatted = true;
-            }
+                Console.WriteLine("Please enter a number between 2 and 10: ");
+                string input = Console.ReadLine();
+                bool yes = int.TryParse(input, out int arraySize);
 
-        } while (isFormatted);
-
-    }
-
-    ///Method for negative number on above method///
-    public static bool callBack(int arraySize)
-    {
-        bool isFormatted = false;
-        try
-        {
-            int[] methodArray = new int[arraySize];
-            for(int i = 0; i < methodArray.Length; i++)
-            {
-                Console.WriteLine($"{i + 1} of {methodArray.Length} - Enter a number: ");
-                int inputNumber = Convert.ToInt32(Console.ReadLine());
-                if(inputNumber >= 0)
+                if (yes && arraySize > 1 && arraySize < 11)
                 {
-                    methodArray[i] = inputNumber;
+                    isFormatted = callBackChallengeTwo(arraySize);
                 }
                 else
                 {
-                    Console.WriteLine("Wrong input, try again.");
+                    Console.WriteLine("Improper input, try again.");
                     isFormatted = true;
-                    break;
+                }
+
+            } while (isFormatted);
+
+        }
+
+        ///Method for non input of a negative number on above method///
+        public static bool callBackChallengeTwo(int arraySize)
+        {
+            bool isFormatted = false;
+            try
+            {
+                int[] methodArray = new int[arraySize];
+                for (int i = 0; i < methodArray.Length; i++)
+                {
+                    Console.WriteLine($"{i + 1} of {methodArray.Length} - Enter a number: ");
+                    int inputNumber = Convert.ToInt32(Console.ReadLine());
+
+                    if (inputNumber >= 0)
+                    {
+                        methodArray[i] = inputNumber;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong input, try again.");
+                        isFormatted = true;
+                        break;
+                    }
+                }
+                if (isFormatted == false)
+                {
+                    Console.WriteLine(GetAverage(methodArray));
                 }
             }
-            if(isFormatted == false)
+            catch (FormatException)
             {
-                Console.WriteLine(GetAverage(methodArray));
+
+                Console.WriteLine("Wrong input, try again.");
+                isFormatted = true;
             }
+            return isFormatted;
         }
-        catch (FormatException)
+
+        ///Add numbers and divide by sum by array length///
+        public static decimal GetAverage(int[] inputArray)
         {
+            int sum = 0;
 
-            Console.WriteLine("Wrong input, try again.");
-            isFormatted = true;
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                sum += inputArray[i];
+            }
+
+            decimal sumDecimal = Convert.ToDecimal(sum);
+            decimal lengthDecimal = Convert.ToDecimal(inputArray.Length);
+            decimal average = sumDecimal / lengthDecimal;
+
+            return average;
         }
-        return isFormatted;
-    }
-
-    ///Add numbers and divide by sum by array length///
-    public static decimal GetAverage(int[] inputArray)
-    {
-        int sum = 0;
-
-        for(int i = 0; i < inputArray.Length; i++)
-        {
-            sum += inputArray[i];
-        }
-
-        decimal sumDecimal = Convert.ToDecimal(sum);
-        decimal lengthDecimal = Convert.ToDecimal(inputArray.Length);
-        decimal average = sumDecimal / lengthDecimal;
-
-        return average;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
 
 
     /// <summary>
-    /// This challenge was tricky. I start by propmpting the user to enter the number of rows which act as half
-    /// of the diamond.
-    /// I then convert the users input followed by activating a forloop. The loop runs through the users 
-    /// entered input, which is 8. The first for loop is calculating the spaces while the second one is incrementing
-    /// "*" symbol and building up to 8 rows. 
-    /// The following for loop below it does the same thing.
+    /// call method for the diamon builder
     /// </summary>
-    public static void ChallengeThreeDiamond()
+    static void ChallengeThree()
     {
-        int i, j, r;
-
-        Console.Write("\n\n");
-        Console.Write("Display the pattern like diamond:\n");
-        Console.Write("-----------------------------------");
-        Console.Write("\n\n");
-
-        Console.Write("Input number of rows (half of the diamond) :");
-        r = Convert.ToInt32(Console.ReadLine());
-        for (i = 0; i <= r; i++)
-        {
-            for (j = 1; j <= r - i; j++)
-                Console.Write(" ");
-            for (j = 1; j <= 2 * i - 1; j++)
-                Console.Write("*");
-            Console.Write("\n");
-        }
-
-        for (i = r - 1; i >= 1; i--)
-        {
-            for (j = 1; j <= r - i; j++)
-                Console.Write(" ");
-            for (j = 1; j <= 2 * i - 1; j++)
-                Console.Write("*");
-            Console.Write("\n");
-        }
+        Diamond();
     }
+
+    /// <summary>
+    /// This makes a diamond. The assignment asks for 9x9. 
+    /// The first outer loop builds the top half.
+    /// The second outer loop builds the bottom half.
+    /// a variable for how big of a diamond you want
+    /// </summary>
+    public static void Diamond()
+    {
+        int rows = 5;
+        int blank = rows - 1;
+
+        for(int i = 1; i <= rows; i++)
+        {
+            for(int x = 0; x <= blank; x++)
+            {
+                Console.WriteLine(" ");
+            }
+            blank--;
+            for(int x = 1; x <= 2 * i - 1; x++)
+            {
+                Console.WriteLine("*");
+            }
+            Console.WriteLine();
+        }
+        blank = 1;
+        for(int i = 1; i <= rows -1; i++)
+        {
+            for(int x = 1; x <= blank; x++)
+            {
+                Console.WriteLine(" ");
+            }
+            blank++;
+            for(int x = 1; x <= 2 * (rows - i) - 1; x++)
+            {
+                Console.WriteLine("*");
+            }
+            Console.WriteLine();
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
     /// <summary>
@@ -248,6 +251,19 @@ namespace SystemIO
         return freq;
 
     }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
 
 
 
