@@ -152,105 +152,117 @@ namespace SystemIO
         }
 
 
-    /// <summary>
-    /// call method for the diamon builder
-    /// </summary>
-    static void ChallengeThree()
-    {
-        Diamond();
-    }
-
-    /// <summary>
-    /// This makes a diamond. The assignment asks for 9x9. 
-    /// The first outer loop builds the top half.
-    /// The second outer loop builds the bottom half.
-    /// a variable for how big of a diamond you want
-    /// </summary>
-    public static void Diamond()
-    {
-        int rows = 5;
-        int blank = rows - 1;
-
-        for(int i = 1; i <= rows; i++)
+        /// <summary>
+        /// call method for the diamon builder
+        /// </summary>
+        static void ChallengeThree()
         {
-            for(int x = 0; x <= blank; x++)
-            {
-                Console.WriteLine(" ");
-            }
-            blank--;
-            for(int x = 1; x <= 2 * i - 1; x++)
-            {
-                Console.WriteLine("*");
-            }
-            Console.WriteLine();
-        }
-        blank = 1;
-        for(int i = 1; i <= rows -1; i++)
-        {
-            for(int x = 1; x <= blank; x++)
-            {
-                Console.WriteLine(" ");
-            }
-            blank++;
-            for(int x = 1; x <= 2 * (rows - i) - 1; x++)
-            {
-                Console.WriteLine("*");
-            }
-            Console.WriteLine();
+            Diamond();
         }
 
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /// <summary>
-    /// Calculate the average of the inputted integers.
-    /// Return the frequency of integers.
-    /// Check if the numbers duplicate or not
-    /// Return first number if no duplicates
-    /// </summary>
-    /// <param name="numberArray"></param>
-    /// <returns></returns>
-    public static int ChallengeFour(int[] numberArray)
-    {
-        //counters to know the frequency//
-        int counter = 0;
-        int freq = 0;
-
-        //arrays for entered and frequency//
-        int numbers = numberArray[0];
-        int frontNumbers = numberArray[0];
-
-        for (int i = 0; i < numberArray.Length; i++)
+        /// <summary>
+        /// This makes a diamond. The assignment asks for 9x9. 
+        /// The first outer loop builds the top half.
+        /// The second outer loop builds the bottom half.
+        /// a variable for how big of a diamond you want
+        /// </summary>
+        public static void Diamond()
         {
-            counter = 0;
-            for (int a = 0; a < numberArray.Length; a++)
+            int rows = 5;
+            int blank = rows - 1;
+
+            for (int i = 1; i <= rows; i++)
             {
-                if (numberArray[i] == numberArray[a])
+                for (int x = 0; x <= blank; x++)
                 {
-                    counter += 1;
-                    frontNumbers = numberArray[i];
+                    Console.WriteLine(" ");
                 }
+                blank--;
+                for (int x = 1; x <= 2 * i - 1; x++)
+                {
+                    Console.WriteLine("*");
+                }
+                Console.WriteLine();
             }
-            if (freq < counter)
+            blank = 1;
+            for (int i = 1; i <= rows - 1; i++)
             {
-                numbers = frontNumbers;
-                freq = counter;
+                for (int x = 1; x <= blank; x++)
+                {
+                    Console.WriteLine(" ");
+                }
+                blank++;
+                for (int x = 1; x <= 2 * (rows - i) - 1; x++)
+                {
+                    Console.WriteLine("*");
+                }
+                Console.WriteLine();
             }
-        }
-        return freq;
 
-    }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Calculate the average of the inputted integers.
+        /// Return the frequency of integers.
+        /// Check if the numbers duplicate or not
+        /// Return first number if no duplicates
+        /// </summary>
+        /// <param name="numberArray"></param>
+        /// <returns></returns>
+        static void ChallengeFour()
+        {
+            int[] newArray = new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
+
+            int checkDuplicates = Duplicates(newArray);
+            Console.WriteLine("Example: input: [1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1]");
+            Console.WriteLine($"output: {checkDuplicates}");
+
+        }
+
+        /// <summary>
+        /// This method returns the number that has the most duplicates.
+        /// Checks each item in the array.
+        /// </summary>
+        /// <param name="inputArray"></param>
+        /// <returns></returns>
+
+        public static int Duplicates(int[] inputArray)
+        {
+            int[] newArray = new int[2] { inputArray[0], 0 };
+
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                int counter = 0;
+                for (int x = 0; x < inputArray.Length; x++)
+                {
+                    if (inputArray[i] == inputArray[i])
+                    {
+                        counter++;
+                    }
+
+                    if (counter > newArray[i])
+                    {
+                        newArray[0] = inputArray[i];
+                        newArray[1] = counter;
+                    }
+                }
+
+            }
+            int all = newArray[0];
+            return all;
+        }
 
 
 
