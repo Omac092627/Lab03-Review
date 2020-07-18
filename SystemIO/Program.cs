@@ -18,6 +18,8 @@ namespace SystemIO
             ChallengeFour();
             ChallengeFive();
             ChallengeSix();
+            ChallengeSeven();
+            ChallengeEight();
 
         }
 
@@ -278,16 +280,22 @@ namespace SystemIO
         {
             int compare = inputArray[0];
 
-            for(int i = 0; i < inputArray.Length; i++)
+            for (int i = 0; i < inputArray.Length; i++)
             {
-                if(inputArray[i] > compare)
+                if (inputArray[i] > compare)
                 {
                     compare = inputArray[i];
                 }
             }
-                return compare;
+            return compare;
         }
 
+        /// <summary>
+        /// First get the path
+        /// Prompt the user to enter a word
+        /// Read the users input
+        /// Append the word
+        /// </summary>
 
         static void ChallengeSix()
         {
@@ -301,6 +309,12 @@ namespace SystemIO
         }
 
 
+        /// <summary>
+        /// Find the path and append the text
+        /// Use catch for two exceptions, one if can't find directory, and another for formatting
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="input"></param>
         static void AppendWord(string path, string input)
         {
             try
@@ -312,106 +326,105 @@ namespace SystemIO
 
                 Console.WriteLine("Directory doesn't exist");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine($"Error: {e.Message}");
             }
         }
 
 
+        /// <summary>
+        /// Find the path
+        /// print the information to console
+        /// </summary>
 
-
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-    /// <summary>
-    /// Reading and writing the file back to the console
-    /// </summary>
-    /// <param name="path"></param>
-
-    static void ReadAllWritingAndPrintToConsole(string path)
-    {
-
-        string[] allLines = File.ReadAllLines(path);
-        Console.WriteLine(String.Join('\n', allLines));
-
-    }
-
-    /// <summary>
-    /// First i instantiate the reading of the file
-    /// Then split the words to separate what I want to remove
-    /// Followed by a for loop to loop through my words
-    /// If my words are there from previous, delte them
-    /// Followed by joining my new words
-    /// </summary>
-    /// <param name="path"></param>
-    /// <param name="removeThisWord"></param>
-
-    static void ReadTheFileandRemoveOneWord(string path, string removeThisWord)
-    {
-        string stringInFile = File.ReadAllText(path);
-
-        string[] words = stringInFile.Split(" ");
-
-        for (int i = 0; i < words.Length; i++)
+        static void ChallengeSeven()
         {
-            if (words[i] == removeThisWord)
+            string path = "../../../words.txt";
+
+            string output = ReadText(path);
+            Console.WriteLine(output);
+        }
+
+        /// <summary>
+        /// Method to read the text from file
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        static string ReadText(string path)
+        {
+            string result = File.ReadAllText(path);
+
+            return result;
+        }
+
+
+        /// <summary>
+        /// Method to choose a word and remove it
+        /// string the path
+        /// remove the word from the path
+        /// </summary>
+        static void ChallengeEight()
+        {
+            string path = "../../../words.txt";
+
+            string remove = ChooseWord(path);
+
+            RemoveWord(path, remove);
+        }
+
+        /// <summary>
+        /// A method to choose the word
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        static string ChooseWord(string path)
+        {
+            string fromFile = ReadText(path);
+
+            string[] words = fromFile.Split(" ");
+
+            return words[1];
+        }
+
+        /// <summary>
+        /// Method to remove the word
+        /// Turn the words into an array
+        /// Find index of word to be removed and remove it
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="removed"></param>
+        static void RemoveWord(string path, string removed)
+        {
+            string fromFile = ReadText(path);
+
+            string[] words = fromFile.Split(" ");
+
+            for(int i = 0; i < words.Length; i++)
             {
-                words[i] = "";
+                if(words[i] == removed)
+                {
+                    words[i] = "";
+                }
+
+                string newString = String.Join(" ", words);
+                File.WriteAllText(path, newString);
             }
-
-            string newString = String.Join(" ", words);
-
-            File.WriteAllText(path, newString);
         }
-    }
 
 
-    /// <summary>
-    /// Promopt the user to enter a sentence
-    /// String the words the user enters
-    /// String an array in order to split up the char's
-    /// String a counter in order to count the number of char's in word
-    /// For loop to loop through the array
-    /// Call the count method while looping through entered array and set equal to concatanation
-    /// Return value to user
-    /// </summary>
-    static void GetLengthOfEachWord()
-    {
-        Console.WriteLine("PLEASE ENTER A SENTENCE:");
-        string words = Console.ReadLine();
-        string[] wordsArray = words.Split(" ");
-        string[] count = new string[wordsArray.Length * 2];
 
 
-        for (int i = 0; i < wordsArray.Length; i++)
-        {
-            count[i] = ($"{String.Join(',', wordsArray[i])}: {String.Join(',', wordsArray[i].Length)}");
-        }
-        Console.WriteLine(count);
 
     }
 
 
 }
 
-}
+
+
+
+
 
 
 
