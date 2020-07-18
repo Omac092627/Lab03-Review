@@ -11,7 +11,6 @@ namespace SystemIO
         /// </summary>
         static void Main(string[] args)
         {
-
             ChallengeOne();
             ChallengeTwo();
             ChallengeThree();
@@ -20,6 +19,7 @@ namespace SystemIO
             ChallengeSix();
             ChallengeSeven();
             ChallengeEight();
+            ChallengeNine();
 
         }
 
@@ -174,36 +174,33 @@ namespace SystemIO
         /// </summary>
         public static void Diamond()
         {
-            int rows = 5;
-            int blank = rows - 1;
 
-            for (int i = 1; i <= rows; i++)
+            int i, j;
+
+            Console.Write("\n\n");
+            Console.Write("Display the pattern like diamond:\n");
+            Console.Write("-----------------------------------");
+            Console.Write("\n\n");
+
+
+            for (i = 0; i <= 5; i++)
             {
-                for (int x = 0; x <= blank; x++)
-                {
-                    Console.WriteLine(" ");
-                }
-                blank--;
-                for (int x = 1; x <= 2 * i - 1; x++)
-                {
-                    Console.WriteLine("*");
-                }
-                Console.WriteLine();
+                for (j = 1; j <= 5 - i; j++)
+                    Console.Write(" ");
+                for (j = 1; j <= 2 * i - 1; j++)
+                    Console.Write("*");
+                Console.Write("\n");
             }
-            blank = 1;
-            for (int i = 1; i <= rows - 1; i++)
+
+            for (i = 5 - 1; i >= 1; i--)
             {
-                for (int x = 1; x <= blank; x++)
-                {
-                    Console.WriteLine(" ");
-                }
-                blank++;
-                for (int x = 1; x <= 2 * (rows - i) - 1; x++)
-                {
-                    Console.WriteLine("*");
-                }
-                Console.WriteLine();
+                for (j = 1; j <= 5 - i; j++)
+                    Console.Write(" ");
+                for (j = 1; j <= 2 * i - 1; j++)
+                    Console.Write("*");
+                Console.Write("\n");
             }
+
 
         }
 
@@ -247,7 +244,7 @@ namespace SystemIO
                         counter++;
                     }
 
-                    if (counter > newArray[i])
+                    if (counter > newArray[1])
                     {
                         newArray[0] = inputArray[i];
                         newArray[1] = counter;
@@ -400,9 +397,9 @@ namespace SystemIO
 
             string[] words = fromFile.Split(" ");
 
-            for(int i = 0; i < words.Length; i++)
+            for (int i = 0; i < words.Length; i++)
             {
-                if(words[i] == removed)
+                if (words[i] == removed)
                 {
                     words[i] = "";
                 }
@@ -413,6 +410,37 @@ namespace SystemIO
         }
 
 
+        /// <summary>
+        /// Prompt user for input to make a word
+        /// Call the length getter
+        /// </summary>
+        static void ChallengeNine()
+        {
+            Console.WriteLine("Enter a sentence: ");
+            string input = Console.ReadLine();
+
+            string[] output = GetLength(input);
+
+            foreach (string word in output)
+            {
+                Console.WriteLine($"{word}");
+            }
+        }
+
+
+
+        public static string[] GetLength(string sentence)
+        {
+            string[] splitString = sentence.Split(" ");
+
+            for (int i = 0; i < splitString.Length; i++)
+            {
+                int wordLength = splitString[i].Length;
+                splitString[i] = $"{splitString[i].ToLower()}: {wordLength}";
+            }
+
+            return splitString;
+        }
 
 
 
