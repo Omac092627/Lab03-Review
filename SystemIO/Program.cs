@@ -14,6 +14,10 @@ namespace SystemIO
 
             ChallengeOne();
             ChallengeTwo();
+            ChallengeThree();
+            ChallengeFour();
+            ChallengeFive();
+            ChallengeSix();
 
         }
 
@@ -202,17 +206,6 @@ namespace SystemIO
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
         /// <summary>
         /// Calculate the average of the inputted integers.
         /// Return the frequency of integers.
@@ -266,74 +259,86 @@ namespace SystemIO
 
 
 
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-    /// <summary>
-    /// I declare an int to hold my array and put some variable in to mitigate workload.
-    /// I prompt the user to enter the amount of numbers they want in array.
-    /// After I propmt the user the number of times they entered.
-    /// I loop through the users input to find the max value.
-    /// </summary>
-    /// <returns></returns>
-
-    public static int ChallengeFive(int[] array)
-    {
-        int[] arr1 = new int[100];
-        int i, mx, n;
-
-
-        Console.Write("\n\nFind maximum and minimum element in an array :\n");
-        Console.Write("--------------------------------------------------\n");
-
-        Console.Write("Input the number of elements to be stored in the array :");
-        n = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("Input {0} elements in the array :\n", n);
-        for (i = 0; i < n; i++)
+        static void ChallengeFive()
         {
-            Console.Write("element - {0} : ", i);
-            arr1[i] = Convert.ToInt32(Console.ReadLine());
+            int[] newArray = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
+
+            int findMaxValue = MaxValue(newArray);
+            Console.WriteLine("Example: input [5, 25, 99, 123, 78, 96, 555, 108, 4 ] ");
+            Console.WriteLine($"return: {findMaxValue}");
+        }
+
+        /// <summary>
+        /// Starts with first position in array and checks if anything is larger
+        /// Once found a larger one, it is checked along with the rest of the array
+        /// </summary>
+        /// <param name="inputArray"></param>
+        /// <returns></returns>
+        public static int MaxValue(int[] inputArray)
+        {
+            int compare = inputArray[0];
+
+            for(int i = 0; i < inputArray.Length; i++)
+            {
+                if(inputArray[i] > compare)
+                {
+                    compare = inputArray[i];
+                }
+            }
+                return compare;
         }
 
 
-        mx = arr1[0];
-
-        for (i = 1; i < n; i++)
+        static void ChallengeSix()
         {
-            if (arr1[i] > mx)
+            string path = "../../../words.txt";
+
+            Console.WriteLine("Enter a word: ");
+
+            string userInput = Console.ReadLine();
+
+            AppendWord(path, userInput);
+        }
+
+
+        static void AppendWord(string path, string input)
+        {
+            try
             {
-                mx = arr1[i];
+                File.AppendAllText(path, $"{input}");
+            }
+            catch (DirectoryNotFoundException)
+            {
+
+                Console.WriteLine("Directory doesn't exist");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
-        Console.Write("Maximum element is : {0}\n", mx);
-        return 0;
-    }
 
 
-    /// <summary>
-    /// Appending a file with words. Calling the path method in the static method at the top.
-    /// </summary>
-    /// <param name="path"></param>
 
-    static void FindAndSaveWriting(string path)
-    {
-        Console.WriteLine("Enter something or die:");
-        string word = Console.ReadLine();
-        File.AppendAllText(path, word);
-        ReadTheFileandRemoveOneWord(path, word);
+
+
+
+
+
+
+
 
     }
+
+
+
+
+
+
+
+
+
+
 
     /// <summary>
     /// Reading and writing the file back to the console
